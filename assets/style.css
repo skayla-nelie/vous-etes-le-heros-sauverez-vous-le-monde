@@ -1,0 +1,67 @@
+@font-face {
+  src: url("police/avengeance/AVENGEANCE\ HEROIC\ AVENGER.ttf ")
+    format("truetype");
+  font-family: "avengeance";
+}
+@font-face {
+  src: url("police/AmericanCaptain-MdEY.otf") format("opentype");
+  font-family: "marvel";
+}
+@font-face {
+  src: url("police/coolvetica\ rg.ttf") format("truetype");
+  font-family: "cool";
+}
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.993);
+  color: rgb(255, 255, 255);
+  height: 800px;
+}
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 650px;
+  background-color: #f0131e;
+}
+.logo {
+  font-family: "avengeance";
+  font-size: 90px;
+}
+.titre {
+  font-family: "marvel";
+  font-size: 50px;
+}
+.texte {
+  font-family: "cool";
+  font-size: 19px;
+  text-align: center;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+img {
+  width: 520px;
+  margin-top: 20px;
+}
+input[type="button"] {
+  background-color: #1c3247;
+  border: none;
+  color: #edf0f1;
+  padding: 10px 25px;
+  text-decoration: none;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.boutton {
+  margin-top: 5px;
+  display: flex;
+  width: 525px;
+  justify-content: space-between;
+}
