@@ -1,18 +1,21 @@
 let glove = 0;
-yesno = function () {
-  glove++;
-};
-debut = function () {
-  glove++;
-  gotochapter("pierres");
 
-  (again= function () {
-  if (glove > true) {
-      gotochapter(`ending`);
-    }  else {
-      gotochapter(`pierres`);
-    }
-//chapitre 1//
+function yesno() {
+  glove++;
+}
+
+function debut() {
+  glove++;
+  goToChapter("pierres");
+}
+
+function again() {
+  if (glove > 4) {
+    goToChapter("ending");
+  } else {
+    goToChapter("pierres");
+  }
+}
 
 let chaptersObj = {
   pierres: {
@@ -22,12 +25,11 @@ let chaptersObj = {
     options: [
       {
         text: "Vous rouler à toutes vitesse dans les rues de New york, losrque...",
-        action: "goToChapter(`sbires`)",
-      },
-    ],
+        action: "goToChapter(`sbires`)"
+      }
+    ]
   },
 
-  //chapitre 2//
   sbires: {
     subtitle: "Pris au piège",
     text: "Vous rouler à toutes vitesse dans les rues de New york lorsque tout à coup, vous êtes attaqué par les sbires de thanos. ",
@@ -35,19 +37,19 @@ let chaptersObj = {
     options: [
       {
         text: "s'enfuir",
-        action: "goToChapter(`fuire`)",
+        action: "goToChapter(`fuire`)"
       },
       {
         text: "combattre",
-        action: "goToChapter(`fight`)",
+        action: "goToChapter(`fight`)"
       },
       {
         text: "aller chercher de l'aide",
-        action: "goToChapter(`help`)",
-      },
-    ],
+        action: "goToChapter(`help`)"
+      }
+    ]
   },
-  //choix 2.1//
+
   fuire: {
     subtitle: "Get out",
     text: "Les sbires de thanos sont nombreux, vous êtes seul. La peur augmente et vous décidez de fuir par les ruelle vers votre gauche. Malheureusement, les sbires vous attrapent, vous volent les pierres et les offres à thanos qui vous efface de l'univers. ",
@@ -55,11 +57,11 @@ let chaptersObj = {
     options: [
       {
         text: "retour au début de la mission",
-        action: again(),
-      },
-    ],
+        action: 'again()'
+      }
+    ]
   },
-  //chapitre 3//
+
   help: {
     subtitle: "The mad titan",
     text: "Vous savez que vous n'êtes pas de taille contre tous les sbires de thanos, alors vous décidez d'aller chercher de l'aide en passant dans les ruelles de droite, mais vous finissez devant Thanos. ",
@@ -67,15 +69,15 @@ let chaptersObj = {
     options: [
       {
         text: "prendre la fuite",
-        action: "goToChapter(`fuire2`)",
+        action: "goToChapter(`fuire2`)"
       },
       {
         text: "combattre",
-        action: "goToChapter(`fight`)",
-      },
-    ],
+        action: "goToChapter(`fight`)"
+      }
+    ]
   },
-  //choix 3.1//
+
   fight: {
     subtitle: "Fight of your life",
     text: "Vous décidez de combattre thanos, même si vous savez que cela peut vous couter votre vie, et c'est ce qui est arrivé. Malgré l'aide des pierres, le combat entre vous et thanos fini en match nulle. Vous êtes tous les deux sout le point de sombrer dans un sommeil éternel qui vous fera recommencer votre mission, mais cette fois- ci vous posséder le gant de l'infini",
@@ -83,11 +85,11 @@ let chaptersObj = {
     options: [
       {
         text: "retour debut mision",
-        action:again(),
-      },
-    ],
+        action: 'again()'
+      }
+    ]
   },
-  //choix 3.2//
+
   fuire2: {
     subtitle: "Fear",
     text: "COMBATTRE THANOS?!?! Vous n'êtes pas fou au point de risqué votre vie, vous êtes terrifié, vore seul reflexe est de fuire mais thanos vour rattrape, vous vole les pierres et vou efface de l'univers",
@@ -95,11 +97,11 @@ let chaptersObj = {
     options: [
       {
         text: "retour au début de la mission",
-        action: again(),
-      },
-    ],
+        action: 'again()'
+      }
+    ]
   },
-  //chapitre 4//
+
   fight2: {
     subtitle: "Le pouvoir des pierres",
     text: "Vous n'avez pas peur, vous savez que ceci est le moment parfait pour prouver de quoi vous êtes capable.Vous repensez au parole de Fury et vous rendez compte que la situation est urgente. Vous décidez d'utiliser la pierre du pouvoir (qui bizarrement ne vous tue pas), et pulvériser les sbires de thanos.",
@@ -107,11 +109,11 @@ let chaptersObj = {
     options: [
       {
         text: "continuer la mission",
-        action: "goToChapter(`fly`)",
-      },
-    ],
+        action: "goToChapter(`fly`)"
+      }
+    ]
   },
-  //chapitre 5//
+
   fly: {
     subtitle: "Les vaisseaux",
     text: "Votre auto à été détruite durant la bataille précédente, après une bonne heure de marche, vous tomber sur de vaisseaux, le Milano(peter quill) et un vaisseau du Wakanda.",
@@ -119,15 +121,15 @@ let chaptersObj = {
     options: [
       {
         text: "vaisseau Quill",
-        action: "goToChapter(`nebula`)",
+        action: "goToChapter(`nebula`)"
       },
       {
         text: "vaisseau Wakanda",
-        action: "goToChapter(`wakanda`)",
-      },
-    ],
+        action: "goToChapter(`wakanda`)"
+      }
+    ]
   },
-  //choix 5.2//
+
   nebula: {
     subtitle: "Nebula",
     text: "Vous décidez d'embarquer dans le Milano, le vaisseau de Peter Quill. Vous n'aviez pas prévue que la nebula qui se trouve a bord était celle du passé. Cette dernière contacte thanos qui vous vole les pierres et vous efface de ce monde.",
@@ -135,11 +137,11 @@ let chaptersObj = {
     options: [
       {
         text: "Retour au début de la mission",
-        action: again(),
-      },
-    ],
+        action: 'again()'
+      }
+    ]
   },
-  //choix 5.1//
+
   wakanda: {
     subtitle: "Wakanda forever",
     text: "Vous décidez d'embarquer dans le vaisseau du wakanda qui vous emmene à la localisation de hulk.",
@@ -147,11 +149,11 @@ let chaptersObj = {
     options: [
       {
         text: "continuer la mission",
-        action: "goToChapter(`gantelet`)",
-      },
-    ],
+        action: "goToChapter(`gantelet`)"
+      }
+    ]
   },
-  //chapitre 6//
+
   gantelet: {
     subtitle: "Le gant de l'infini",
     text: "Vous arrivez devant hulk qui est le seul capable de supporter le douleur du gants combiné au pierre. Vous lui remettez toutes les pierres. Ce dernier vous demande si vous avez aussi le gant.",
@@ -163,11 +165,11 @@ let chaptersObj = {
       },
       {
         text: "non",
-        action: again(),
-      },
-    ],
+        action: 'again()'
+      }
+    ]
   },
-  //chapitre 7//
+ 
   victoire: {
     subtitle: "Bravo",
     text: "Vous remettez le gant à hulk. Il dépose les pierres sur celui-ci et fini par claquer du doigt. Le monde est sauvé.",
@@ -175,28 +177,28 @@ let chaptersObj = {
     options: [
       {
         text: "Recommencer",
-        action: again(),
-      },
-    ],
-  },
+        action: 'again()'
+      }
+    ]
+  }
 };
 
 function goToChapter(chapterName) {
   let chapitre = document.querySelector(".titre");
   let img = document.querySelector(".img");
   let texte = document.querySelector(".texte");
+  let button = document.querySelector(".button");
+
   chapitre.innerText = chaptersObj[chapterName].subtitle;
   texte.innerText = chaptersObj[chapterName].text;
   img.innerHTML = `<img src="${chaptersObj[chapterName].img}" alt= "chapter_img" />`;
-  for (
-    let index = 0;
-    index < chaptersObj[chapterName].options.length;
-    index++
-  ) {
-    let txtButton = "";
-    let decision = chaptersObj[chapterName].options[index].action;
-    txtButton += `<div class="button"><button type="button" onclick="${chaptersObj[chapterName].options[index].action}">${chaptersObj[chapterName].options[index].text}</button></div>`;
+
+  let txtButton = "";
+  for (let index = 0; index < chaptersObj[chapterName].options.length; index++) {
+    const option = chaptersObj[chapterName].options[index];
+    txtButton += `<button class="btn" onclick="${option.action}">${option.text}</button>`;
   }
-  decision.innerHTML = txtButton;
+  button.innerHTML = txtButton;
 }
-goToChapter("Les pierres de l'infini");
+
+goToChapter("pierres");
