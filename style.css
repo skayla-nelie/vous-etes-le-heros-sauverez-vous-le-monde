@@ -1,14 +1,14 @@
 @font-face {
-  src: url("police/avengeance/AVENGEANCE\ HEROIC\ AVENGER.ttf ")
+  src: url("assets/police/avengeance/AVENGEANCE\ HEROIC\ AVENGER.ttf ")
     format("truetype");
   font-family: "avengeance";
 }
 @font-face {
-  src: url("police/AmericanCaptain-MdEY.otf") format("opentype");
+  src: url("assets/police/AmericanCaptain-MdEY.otf") format("opentype");
   font-family: "marvel";
 }
 @font-face {
-  src: url("police/coolvetica\ rg.ttf") format("truetype");
+  src: url("assets/police/coolvetica\ rg.ttf") format("truetype");
   font-family: "cool";
 }
 body {
@@ -49,7 +49,8 @@ img {
   width: 520px;
   margin-top: 20px;
 }
-input[type="button"] {
+
+.btn {
   background-color: #1c3247;
   border: none;
   color: #edf0f1;
