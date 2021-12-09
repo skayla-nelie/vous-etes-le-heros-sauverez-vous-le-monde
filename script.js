@@ -1,5 +1,6 @@
 let glove = 0;
-if (localStorage.getItem("glove") != null) { // Est-ce que glove est sauvegardé dans localStorage?
+if (localStorage.getItem("glove") != null) {
+  // Est-ce que glove est sauvegardé dans localStorage?
   glove = localStorage.getItem("glove"); // Si oui, donnons la valeur à glove de ce qu'il y a de sauvegardé.
 }
 
@@ -25,9 +26,9 @@ let chaptersObj = {
     options: [
       {
         text: "Vous rouler à toutes vitesse dans les rues de New york, losrque...",
-        action: "goToChapter(`sbires`)"
-      }
-    ]
+        action: "goToChapter(`sbires`)",
+      },
+    ],
   },
 
   sbires: {
@@ -37,17 +38,17 @@ let chaptersObj = {
     options: [
       {
         text: "s'enfuir",
-        action: "goToChapter(`fuire`)"
+        action: "goToChapter(`fuire`)",
       },
       {
         text: "combattre",
-        action: "goToChapter(`fight`)"
+        action: "goToChapter(`fight`)",
       },
       {
         text: "aller chercher de l'aide",
-        action: "goToChapter(`help`)"
-      }
-    ]
+        action: "goToChapter(`help`)",
+      },
+    ],
   },
 
   fuire: {
@@ -70,7 +71,7 @@ let chaptersObj = {
     options: [
       {
         text: "prendre la fuite",
-        action: "goToChapter(`fuire2`)"
+        action: "goToChapter(`fuire2`)",
       },
       {
         text: "combattre",
@@ -110,9 +111,9 @@ let chaptersObj = {
     options: [
       {
         text: "continuer la mission",
-        action: "goToChapter(`fly`)"
-      }
-    ]
+        action: "goToChapter(`fly`)",
+      },
+    ],
   },
 
   fly: {
@@ -122,13 +123,13 @@ let chaptersObj = {
     options: [
       {
         text: "vaisseau Quill",
-        action: "goToChapter(`nebula`)"
+        action: "goToChapter(`nebula`)",
       },
       {
         text: "vaisseau Wakanda",
-        action: "goToChapter(`wakanda`)"
-      }
-    ]
+        action: "goToChapter(`wakanda`)",
+      },
+    ],
   },
 
   nebula: {
@@ -151,9 +152,9 @@ let chaptersObj = {
     options: [
       {
         text: "continuer la mission",
-        action: "goToChapter(`gantelet`)"
-      }
-    ]
+        action: "goToChapter(`gantelet`)",
+      },
+    ],
   },
 
   gantelet: {
@@ -199,9 +200,11 @@ function goToChapter(chapterName) {
   chapitre.innerText = chapter.subtitle;
   texte.innerText = chapter.text;
 
-  if (chapter.video != undefined) { // Si une video est trouvée dans le chapitre courant
+  if (chapter.video != undefined) {
+    // Si une video est trouvée dans le chapitre courant
     img.innerHTML = `<video src="${chapter.video}" loop muted autoplay>`; // On insère une vidéo
-  } else { // Sinon
+  } else {
+    // Sinon
     img.innerHTML = `<img src="${chapter.img}" alt= "chapter_img" />`; // On insère une image
   }
 
@@ -216,8 +219,21 @@ function goToChapter(chapterName) {
   audio.play(); // On joue le son
 }
 
-let currentchapter = 'pierres'; // Chapitre de départ par défaut
-if (localStorage.getItem("chapter") != null) { // Est-ce qu'un chapitre est sauvegardé dans localStorage?
-  currentchapter = localStorage.getItem("chapter") // Si oui, changeons le chapitre de départ pour le chapitre sauvegardé
+let currentchapter = "pierres"; // Chapitre de départ par défaut
+if (localStorage.getItem("chapter") != null) {
+  // Est-ce qu'un chapitre est sauvegardé dans localStorage?
+  currentchapter = localStorage.getItem("chapter"); // Si oui, changeons le chapitre de départ pour le chapitre sauvegardé
 }
 goToChapter(currentchapter); // Débutons le jeu au chapitre qui fait le plus de sens (départ ou sauvegardé)
+
+let crochet = document.querySelector(".crochet");
+audio = true;
+if (check.checked === true) {
+  audio = true;
+} else {
+  audio = false;
+}
+if (audio === true) {
+  audio.currentTime = 0;
+  audio.play();
+}
